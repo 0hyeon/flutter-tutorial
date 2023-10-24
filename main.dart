@@ -1,3 +1,10 @@
+String capitalizeName(String? name) =>
+    name != null ? name.toUpperCase() : 'ANON';
+
+/*QQ operator*/
+String capitalizeNameQQ(String? name) =>
+    name?.toUpperCase() ?? 'ANON'; //null아아니면 Anon
+
 void sayHello(String name) {
   //no return
   print("Hello ${name} nice to meet you!");
