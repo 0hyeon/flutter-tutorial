@@ -1,4 +1,20 @@
+void sayHello(String name) {
+  //no return
+  print("Hello ${name} nice to meet you!");
+}
+
+String sayHello2(String potato) {
+  return ("Hello ${potato} nice to meet you!");
+}
+
+String sayHello3(String potato) => "Hello ${potato} nice to meet you!";
+
+num plus(num a, num b) => a + b;
 void main() {
+  print(sayHello2('0hyeon'));
+  print(sayHello3('0hyeon'));
+  print(plus(99, 1));
+
   var name = '0hyeon'; //변수생성
   String name1 = '0hyeon'; //명시적생성
   name = '1hyeon';
@@ -28,9 +44,61 @@ void main() {
 
   // const vs final
   // 앱스토어에 올리기전 값을 알고있다면 const , api를 통해 값을 불러와야 하다면final
+
+  /*Collection If*/
   var gibeMeFive = true;
   var number = [1, 2, 3, 4, if (gibeMeFive) 5];
   print(number);
+  var name3 = '0hyeon';
+  var age = 10;
+  var greeting =
+      'Hello everyone, my name is $name3, nice to meet you! I\'m ${age + 2}';
+  print(greeting);
+
+  /*Collection For*/
+  var oldFriends = ['0hyeon', 'jaehoon'];
+  var newFriends = [
+    'eunsol',
+    'nagyoung',
+    for (var friend in oldFriends) "$friend"
+  ];
+  print(newFriends);
+
+  /*Map*/
+  var players = {
+    'name': 'nico',
+    'xp': 19.99,
+    'superpower': false,
+  };
+  Map<int, bool> players2 = {1: true, 2: false, 3: true};
+  List<Map<String, Object>> players3 = [
+    {'name': 'nico', 'xp': 1999993.999},
+  ];
+  print(players);
+  print(players2);
+  print(players3);
+  /*Set*/
+  Set<int> numbers = {1, 2, 3, 4};
+  numbers.add(1);
+  numbers.add(1);
+  numbers.add(1);
+  numbers.add(1);
+  numbers.add(1);
+  print(numbers);
+  List<int> numbers2 = [1, 2, 3, 4];
+  numbers2.add(1);
+  numbers2.add(1);
+  numbers2.add(1);
+  numbers2.add(1);
+  numbers2.add(1);
+  print(numbers2);
+  var numbers3 = {1, 2, 3, 4};
+  numbers3.add(1);
+  numbers3.add(1);
+  numbers3.add(1);
+  numbers3.add(1);
+  numbers3.add(1);
+  print(numbers3);
 }
 // 실행 명령어dart run main.dart
 //cascade operator때문에 세미콜론을 꼭써줘야
