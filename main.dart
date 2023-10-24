@@ -1,3 +1,18 @@
+/*Typedef*/
+typedef ListOfInts = List<int>;
+ListOfInts reverseListOfNumbers(ListOfInts list) {
+  var reversed = list.reversed;
+  //함수를거꾸로
+  return reversed.toList();
+}
+
+/*Typedef2*/
+typedef UserInfo = Map<String, String>; //
+String sayHI(UserInfo userInfo) {
+  //(타입 변수)
+  return "hHi ${userInfo['name']}";
+}
+
 String capitalizeName(String? name) =>
     name != null ? name.toUpperCase() : 'ANON';
 
@@ -32,6 +47,9 @@ String sayHello5(String name, int age, [String? country = 'cuba']) =>
 
 num plus(num a, num b) => a + b;
 void main() {
+  print(reverseListOfNumbers([3, 6, 10]));
+  sayHI({"name": '0hyeon'});
+
   print(sayHello5('0hyeon', 13));
   print(sayHello2(
     age: 30,
