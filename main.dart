@@ -3,14 +3,14 @@ void sayHello(String name) {
   print("Hello ${name} nice to meet you!");
 }
 
-/*named arugument : 순서오 관계없이 인자 입력가능*/
+/*named arugument*/
 String sayHello2(
     {String potato = 'anon', int age = 99, String country = 'wakanda'}) {
   return ("Hello ${potato} nice to meet you! ${age},${country}");
 }
 
 String sayHello4(
-    //호출시 인자가 없으면 빨간불
+    //호출시 인자가 없으면 error
     {required String potato,
     required int age,
     required String country}) {
@@ -19,8 +19,13 @@ String sayHello4(
 
 String sayHello3(String potato) => "Hello ${potato} nice to meet you!";
 
+/*optional positional parameters */
+String sayHello5(String name, int age, [String? country = 'cuba']) =>
+    "Hello ${name} nice to meet you!";
+
 num plus(num a, num b) => a + b;
 void main() {
+  print(sayHello5('0hyeon', 13));
   print(sayHello2(
     age: 30,
     country: 'gasansi',
