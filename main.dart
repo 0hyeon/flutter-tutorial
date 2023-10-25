@@ -144,17 +144,29 @@ void main() {
   numbers3.add(1);
   print(numbers3);
 
-  var player = Player();
+  var player = Player("0hyeon", 1500);
   player.sayHello();
+  var player2 = Player('2hyeon', 25400);
 }
 // 실행 명령어dart run main.dart
 //cascade operator때문에 세미콜론을 꼭써줘야
 //반드시 main에서 실행해야
 
+/*prac class instance */
 class Player {
-  final String name = '0hyeon';
-  int xp = 1500;
+  //클래스를 만들땐 타입을꼭 명시해야
+
+  final String name;
+  int xp;
+
+  // Player(String name, int xp) {
+  //   this.name = name;
+  //   this.xp = xp;
+  // }
+
+  /*Construct 위에거보다 짧아짐*/
+  Player(this.name, this.xp);
   void sayHello() {
-    print("Hi my name is ${name}");
+    print("Hi my name is $name");
   }
 }
