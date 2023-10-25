@@ -144,9 +144,11 @@ void main() {
   numbers3.add(1);
   print(numbers3);
 
-  var player = Player("0hyeon", 1500);
+  /*Named Constructor Parameters*/
+  var player = Player(name: "0hyeon", xp: 1500, team: 'blue', age: 21);
   player.sayHello();
-  var player2 = Player('2hyeon', 25400);
+
+  // var player2 = Player('2hyeon', 25400);
 }
 // 실행 명령어dart run main.dart
 //cascade operator때문에 세미콜론을 꼭써줘야
@@ -158,6 +160,8 @@ class Player {
 
   final String name;
   int xp;
+  String team;
+  int age;
 
   // Player(String name, int xp) {
   //   this.name = name;
@@ -165,7 +169,11 @@ class Player {
   // }
 
   /*Construct 위에거보다 짧아짐*/
-  Player(this.name, this.xp);
+  Player(
+      {required this.name,
+      required this.xp,
+      required this.team,
+      required this.age});
   void sayHello() {
     print("Hi my name is $name");
   }
