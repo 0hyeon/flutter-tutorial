@@ -145,7 +145,9 @@ void main() {
   print(numbers3);
 
   /*Named Constructor Parameters*/
-  var player = Player(name: "0hyeon", xp: 1500, team: 'blue', age: 21);
+  // var player = Player(name: "0hyeon", xp: 1500, team: 'blue', age: 21);
+
+  var player = Player.createBluePlayer(name: '0hyeon', age: 21);
   player.sayHello();
 
   // var player2 = Player('2hyeon', 25400);
@@ -158,10 +160,8 @@ void main() {
 class Player {
   //클래스를 만들땐 타입을꼭 명시해야
 
-  final String name;
-  int xp;
-  String team;
-  int age;
+  final String name, team;
+  int xp, age;
 
   // Player(String name, int xp) {
   //   this.name = name;
@@ -174,6 +174,18 @@ class Player {
       required this.xp,
       required this.team,
       required this.age});
+  /*createBluePlyer : Named형식 reqired */
+  Player.createBluePlayer({required String name, required int age})
+      : this.age = age,
+        this.name = name,
+        this.team = 'blue',
+        this.xp = 0;
+  /*createRedPlyer : Positional optional */
+  Player.createRedPlayer(String name, int age)
+      : this.age = age,
+        this.name = name,
+        this.team = 'red',
+        this.xp = 0;
   void sayHello() {
     print("Hi my name is $name");
   }
